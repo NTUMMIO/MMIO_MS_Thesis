@@ -31,7 +31,7 @@
 ## 環境需求
 - TeX 發行版：**TeX Live 2023+** 或 **MiKTeX 25+**
 - 編譯工具：`latexmk`（建議），或 `pdflatex` / `bibtex`
-- 編輯器（擇一）：VS Code（LaTeX Workshop）、TeXstudio、Texmaker 等
+- 編輯器（擇一）：VS Code（Extensions:LaTeX Workshop）、TeXstudio、Texmaker 等
 
 ---
 
