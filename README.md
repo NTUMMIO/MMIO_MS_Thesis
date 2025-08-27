@@ -1,67 +1,166 @@
-# 台大碩士論文模板（Latex + Word）
+# MMIO 論文 LaTeX 模板 README
 
-### 目錄
-1. [簡介](#簡介)
-1. [插入中文頁與空白頁](#插入中文頁與空白頁)
-1. [浮水印](#浮水印)
-1. [數位物件識別碼](#數位物件識別碼)
-1. [保全設定](#保全設定)
+> **適用對象**：MMIO 實驗室碩博士論文撰寫  
+> **來源**：本模板參考並修訂自 [mediaic/NTU_MS_Thesis](https://github.com/mediaic/NTU_MS_Thesis.git)  
+> **規範依據**：此模板以台大論文提交系統「學位論文上傳手冊.pdf / Thesis_Guide.pdf」之2025年版本為準  
+> **重要限制**：**本 LaTeX 模板目前不支援中文輸入**（中文頁面請於輸出 PDF 後依照「編輯頁面」處理）
 
-### 簡介
-* 本文主要根據「[臺大電子學位論文上傳手冊](http://www.lib.ntu.edu.tw/doc/cl/etdsguide.pdf)」編訂而成。根據本文將所有步驟完成後，即可得到最終合格版之畢業論文（可參考此[論文](http://media.ee.ntu.edu.tw/personal/pcwu/research/phd_dissertation/pcwu_phd_dissertation.pdf)）。
-* 由於台大論文預設格式為Word，但以Word編輯論文實屬困難；這個Repository提供英文Latex的模板，另外加上幾份含有中文的Word檔以加在論文開頭數頁。版面設計同時根據「[臺大學位論文格式規範](http://www.lib.ntu.edu.tw/doc/cl/THESISSAMPLE.doc)」與一般大眾美學觀感進行調配，並且已通過台大圖書館審核，請安心服用。由於論文主體全為英文，因此並不需要在Latex相關軟體中加入中文語言包。等到所有檔案皆完成後，再透過相關軟體如**Adobe Acrobat Pro**將所有PDF檔合併在同一份即可。
-* **Adobe Acrobat Pro**可在**計中電腦教室**、**總圖書館**、**醫學院圖書館**內之電腦使用，或是連接至計中提供之[台大虛擬桌面](http://vdiqa.ntu.edu.tw/)使用。
-* 若作業系統為Windows，則建議使用軟體[MiKTeX](https://miktex.org/)編輯論文主體。（其他作業系統待補充）
-* Side.docx為論文側邊檔案，不需要與論文主體合併，只需要在轉成PDF檔後交予影印店處理即可。
-* 建議屆時在交檔案給影印店時，同時繳交**論文主體**、**封面頁**與**側邊**三份檔案。
-* 本實驗室通常於[宏信影印店](http://www.prinths.com/)製作學位論文，也歡迎大家推薦其他優質好店。
+---
 
-### 插入中文頁與空白頁
-* 在編輯完英文學位論文後，我們需要在開頭數頁加上必須之中文頁，包括**封面頁**、**論文口試委員審定書**、**謝辭**、**中文摘要**等（相關模板檔案在資料夾**doc**內）。
-* 若論文總頁數超過80頁，原則上使用**雙面印刷**。由於每個章節的第一頁通常會安排在**奇數頁**，因此在插入上述中文頁後，需於適當處插入**空白頁**。
-* 若論文總頁數在80頁以下，則建議使用**單面印刷**。在此情況下**不需要另外加入空白頁**，並將**thesis.tex**第一行之**twoside**以**oneside**置換。
+## 目錄
+- [功能與特色](#功能與特色)
+- [環境需求](#環境需求)
+- [專案結構](#專案結構)
+- [檔案說明](#檔案說明)
+- [快速開始](#快速開始)
+- [引用與參考文獻](#引用與參考文獻)
+- [圖表、演算法與方程式](#圖表演算法與方程式)
+- [編輯頁面（重要）](#編輯頁面重要)
+- [doc 資料夾檔案用途與插入位置對照](#doc-資料夾檔案用途與插入位置對照)
+- [常見問題](#常見問題)
+- [授權與致謝](#授權與致謝)
 
-以下示範如何透過使用**Adobe Acrobat Pro**插入其他PDF檔與空白頁。首先，選擇右邊選單之**Organize Pages**：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/2_1.png)
+---
 
-接著插入其他PDF檔案：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/2_2.png)
+## 功能與特色
+- 依據 NTU 論文上傳手冊之版面規範進行設計（前頁、章節、附錄等）。
+- 內含常用排版示例（引用、圖表、演算法、方程式）可直接套用。
+- **英文撰寫流程順暢**；中文頁面改以 **PDF 編輯頁面** 完成（見下文）。
 
-之後插入空白頁：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/2_3.png)
+---
 
-接著再根據上述步驟依序插入其他中文頁與所需之空白頁。最終前八頁（雙面印刷）之樣貌（單面印刷則不需插入空白頁）：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/2_4.png)
+## 環境需求
+- TeX 發行版：**TeX Live 2023+** 或 **MiKTeX 25+**
+- 編譯工具：`latexmk`（建議），或 `pdflatex` / `bibtex`
+- 編輯器（擇一）：VS Code（LaTeX Workshop）、TeXstudio、Texmaker 等
 
-### 浮水印
-* 由於「[臺大電子學位論文上傳手冊](http://www.lib.ntu.edu.tw/doc/cl/etdsguide.pdf)」內提供之[校徽圖檔](http://www.lib.ntu.edu.tw/doc/CL/watermark.pdf)並非向量檔，且畫質低落，不符大眾美感。因此，我們另外找了[校徽向量檔](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/doc/National_Taiwan_University_logo_gray.pdf)，並已置於資料夾**doc**內。
-* 另外，為了提升畫面整理視覺舒適度，我們在校徽浮水印設定上也略與學校建議不同；然而本設定也已通過學校認可，請安心服用。
+---
 
-以下示範如何透過使用**Adobe Acrobat Pro**插入校徽浮水印。首先，選擇右邊選單之**Watermark**：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/3_1.png)
+## 專案結構
+```text
+.
+├─ thesis.tex                # 主檔案（定義前頁、正文、附錄等）
+├─ macro.tex                 # 套件與自訂指令（通常不需修改）
+├─ thesis.bib                # 參考文獻（BibTeX）
+├─ inc/                      # 各章節分檔
+│  ├─ Template.tex           # 常用排版示例（引用/圖表/演算法/方程式）
+│  ├─ 0_abbreviations/...
+│  ├─ 0_abstract/...
+│  ├─ 1_introduction/...
+│  ├─ 2_related_works/...
+│  ├─ 3_materials_methods/...
+│  ├─ 4_results/...
+│  ├─ 5_discussion/...
+│  ├─ 6_conclusion/...
+│  └─ 7_appendix/...
+└─ doc/                      # 學校提供或需替換之頁面檔
+   ├─ Acknowledgement
+   ├─ Approval
+   ├─ Chinese Abstract
+   ├─ Cover
+   ├─ Cover_with_side
+   ├─ NTU_watermark
+   └─ THESISSAMPLE
+```
 
-接著依照以下設定（配合本文提供的校徽向量檔）：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/3_2.png)
+---
 
-### 數位物件識別碼
-* DOI 是數位物件辨識碼（Digital Object Identifier）的簡稱，為物件在網路上的唯一識別碼並可用於永久連結，可有效提昇學位論文的國際能見度及影響力。
+## 檔案說明
+- **`thesis.tex`**：整體文件入口；設定前置頁、章節匯入（`\input{inc/...}`）、附錄等。
+- **`inc/`**：章節內容分檔管理（abbreviations、abstract、introduction、related works、materials and methods、results、discussion、conclusion、appendix）。
+- **`inc/Template.tex`**：常用環境與語法示例（圖表、演算法、方程式、引用）；建議先閱讀並比照使用。
+- **`thesis.bib`**：BibTeX 參考文獻庫。
+- **`macro.tex`**：套件載入與巨集定義，**一般不需修改**。
+- **`doc/`**：學校制式頁面與浮水印素材，供 **輸出後 PDF 編輯頁面** 使用。
 
-請先登入台大之「[電子學位論文服務系統](http://etds.lib.ntu.edu.tw/etdsystem/submit/submitLogin)」，並在**輸入論文基本資料**之網頁**複製**論文的DOI碼：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/4_1.png)
+---
 
-之後使用**Adobe Acrobat Pro**插入DOI碼。選擇右邊選單之**Watermark**：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/4_2.png)
+## 快速開始
+1. **撰寫內容**  
+   - 於 `inc/` 之各章節檔撰寫英文內容。  
+   - 在 `inc/0_abbreviations/list_of_abbreviations.tex` 依照範例格式加入縮寫名稱。
+   - 於 `thesis.bib` 加入BibTex格式之參考資料文獻。  
 
-接著依照以下設定：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/4_3.png)
+2. **（必做）編輯頁面**  
+   依「學位論文上傳手冊」於 Acrobat Pro 完成 **封面/中文摘要/致謝** 與 **浮水印（校徽、DOI）** 等作業（見下節）。
 
-### 保全設定
-* 台大規定需將PDF檔加上限制編輯、允許高解析度列印的保全措施。
+---
 
-以下示範如何透過使用**Adobe Acrobat Pro**設定保全。首先，選擇右邊選單之**Encrypt**：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/5_1.png)
+## 引用與參考文獻
+- 於 `thesis.bib` 新增 BibTeX 條目，例：
+  ```bibtex
+  @book{Cherry_2006_PET,
+    author = {Cherry, Simon R. and Dahlbom, Magnus},
+    title = {PET: Physics, Instrumentation, and Scanners},
+    publisher = {Springer},
+    address = {New York, NY},
+    DOI = {10.1007/0-387-34946-4_1},
+    url = {http://dx.doi.org/10.1007/0-387-34946-4_1},
+    year = {2006},
+    type = {Book}
+  }
+  @article{Zhou_2004_SSIM,
+    author  = {Zhou, Wang and Bovik, Alan C. and Sheikh, Hamid R. and Simoncelli, Eero P.},
+    title   = {Image Quality Assessment: From Error Visibility to Structural Similarity},
+    journal = {IEEE Transactions on Image Processing},
+    year    = {2004},
+    volume  = {13},
+    number  = {4},
+    pages   = {600--612}
+  }
+  ```
+- 文中引用使用 `\cite{Cherry_2006_PET}`（或依模板已載入之引用套件調整）。
+- 變更/新增文獻後，請重新執行 **BibTeX 流程**。
 
-接著依照圖示設定保全項目：
-![](https://raw.githubusercontent.com/mediaic/NTU_MS_Thesis/master/image/5_2.png)
+---
 
-最後記得**存檔**再離開。
+## 圖表、演算法與方程式
+- 範例皆收錄於 `inc/Template.tex`：  
+  - **圖表**：`figure`  
+  - **表**：`table`  
+  - **演算法**： `algorithm`  
+  - **方程式**：`equation`  
+- 建議：複製範例區塊 → 修改標題/標號/標註 → 引用於正文。
+
+---
+
+## 編輯頁面（重要）
+> 本模板 **不支援中文輸入**。**封面（Cover）**、**中文摘要（Chinese Abstract）**、**致謝（Acknowledgement）** 等中文或學校制式頁面，請於輸出 `thesis.pdf` 後以 **Adobe Acrobat Pro** 進行替換／插入與 **浮水印** 設定。
+
+**步驟：**
+0. 步驟依「學位論文上傳手冊」（頁碼格式、頁面順序、浮水印頁範圍與樣式）。  
+1. 以 **Adobe Acrobat Pro** 開啟 `thesis.pdf`。  
+2. 進入 **工具 ▸ 組織頁面（Organize Pages）**。  
+3. **插入封面**：將 `doc/Cover` 插入至文件最前方（不加入頁碼）。  
+4. **替換頁碼 i–ii（羅馬數字）為致謝**：以 `doc/Acknowledgement` 取代。  
+5. **替換頁碼 iii–iv（羅馬數字）為中文摘要**：以 `doc/Chinese Abstract` 取代。  
+6. **校徽與 DOI 浮水印**：  
+   - **校徽**：**工具 ▸ 編輯 PDF ▸ 浮水印 ▸ 新增**，選擇 `doc/NTU_watermark`（圖檔）並依手冊規定位置/透明度/套用頁面範圍設定。  
+   - **DOI 碼**：同上以 **浮水印** 新增（可用文字或圖檔），內容與位置請依手冊規範。  
+7. 依「學位論文上傳手冊」設定保全。  
+8. 依「學位論文上傳手冊」逐項檢查。  
+
+> **提醒**：實際插入/替換頁範圍與樣式以「學位論文上傳手冊」之**最新規定**為準；若手冊版本更新，請據以調整。
+
+---
+
+## 常見問題
+- **為何不能直接輸入中文？**  
+  本模板未啟用中文字型/排版套件，僅支援英文編譯。中文頁面改以 **PDF 編輯頁面** 完成，以確保相容性與版面符合學校規範。
+
+- **參考文獻樣式如何更改？**  
+  本模板預設 BibTeX 流程；如需改動引用樣式，請自行調整相關套件與 `.bst` 檔並完整測試。
+
+- **頁碼 i、ii、iii… 如何確認？**  
+  以 Acrobat Pro 檢視縮圖與頁碼標註，並比照學校手冊之前置頁順序與標示方式。
+
+---
+
+## 授權與致謝
+- 本模板**參考並修訂**自：`mediaic/NTU_MS_Thesis`。  
+- 使用與再散布請同時遵循本專案與上游專案之授權條款；若需授權細節，請查閱各專案的授權聲明。  
+- 感謝 MMIO 實驗室成員之建議與回饋。
+
+---
+
+**最後提醒**：請以 **「學位論文上傳手冊.pdf / Thesis_Guide.pdf」** 的**最新版本**為最終依據，編譯與編輯頁面完成後務必逐條檢查。祝順利完稿！
