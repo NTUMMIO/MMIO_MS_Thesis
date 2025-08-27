@@ -1,0 +1,168 @@
+\glsdefs@newdocentry{AD}%
+{%
+name={\acronymfont {\glsentryshort {AD}}},%
+sort={AD},%
+type={acronym},%
+first={AD},%
+firstplural={ADs},%
+text={AD},%
+plural={ADs},%
+description={Alzheimer's Disease},%
+descriptionplural={Alzheimer's Disease},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Alzheimer's Disease},%
+longplural={Alzheimer's Diseases},%
+short={AD},%
+shortplural={ADs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CN}%
+{%
+name={\acronymfont {\glsentryshort {CN}}},%
+sort={CN},%
+type={acronym},%
+first={CN},%
+firstplural={CNs},%
+text={CN},%
+plural={CNs},%
+description={cognitive normal},%
+descriptionplural={cognitive normal},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={cognitive normal},%
+longplural={cognitive normals},%
+short={CN},%
+shortplural={CNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MCI}%
+{%
+name={\acronymfont {\glsentryshort {MCI}}},%
+sort={MCI},%
+type={acronym},%
+first={MCI},%
+firstplural={MCIs},%
+text={MCI},%
+plural={MCIs},%
+description={mild cognitive impairment},%
+descriptionplural={mild cognitive impairment},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={mild cognitive impairment},%
+longplural={mild cognitive impairments},%
+short={MCI},%
+shortplural={MCIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MRI}%
+{%
+name={\acronymfont {\glsentryshort {MRI}}},%
+sort={MRI},%
+type={acronym},%
+first={MRI},%
+firstplural={MRIs},%
+text={MRI},%
+plural={MRIs},%
+description={magnetic resonance imaging},%
+descriptionplural={magnetic resonance imaging},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={magnetic resonance imaging},%
+longplural={magnetic resonance imagings},%
+short={MRI},%
+shortplural={MRIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MMIO}%
+{%
+name={\acronymfont {\glsentryshort {MMIO}}},%
+sort={MMIO},%
+type={acronym},%
+first={MMIO},%
+firstplural={MMIOs},%
+text={MMIO},%
+plural={MMIOs},%
+description={Multimodal Medical Imaging Optimization},%
+descriptionplural={Multimodal Medical Imaging Optimization},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Multimodal Medical Imaging Optimization},%
+longplural={Multimodal Medical Imaging Optimizations},%
+short={MMIO},%
+shortplural={MMIOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PET}%
+{%
+name={\acronymfont {\glsentryshort {PET}}},%
+sort={PET},%
+type={acronym},%
+first={PET},%
+firstplural={PETs},%
+text={PET},%
+plural={PETs},%
+description={positron emission tomography},%
+descriptionplural={positron emission tomography},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={positron emission tomography},%
+longplural={positron emission tomographys},%
+short={PET},%
+shortplural={PETs},%
+counter={page},%
+parent={},%
+%
+}%
+

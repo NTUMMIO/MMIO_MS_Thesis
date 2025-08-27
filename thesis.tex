@@ -1,20 +1,12 @@
 \documentclass[a4paper, 12pt, twoside, openright]{mythesis}
 
-\include{macros}
+\input{macros}
 \renewcommand{\baselinestretch}{1.5}
-
-%\hypersetup{
-%    colorlinks=true,       % false: boxed links; true: colored links
-%    linkcolor=blue,          % color of internal links
-%    citecolor=blue,        % color of links to bibliography
-%    filecolor=blue,      % color of file links
-%    urlcolor=blue           % color of external links
-%}
 
 %------------------------------------
 % Thesis boundary Setting
 %-------------------------------------
-
+%\makecover  
 \textwidth      = 137.0mm
 \textheight     = 224.0mm
 \topmargin      =  -3.0mm
@@ -30,26 +22,43 @@
 \setcounter{page}{1}
 %\thispagestyle{empty}
 
+
 \begin{document}
-\title{\textbf{Your Thesis Title}}
-
-
-\author{ \\  \\ \\
-{\it Your Name}\\
-{\it Advisor: Shao-Yi Chien} \\ \\ \\ \\  \\ \\
-{\it Graduate Institute of Electronics Engineering}\\
-{\it National Taiwan University} \\
-{\it Taipei, Taiwan}\\ }
-
-{\date{May 2018}}
-
-\maketitle
+%推薦使用doc/Cover.docx進行封面的編輯
+%recommend using doc/Cover.docx for editing the cover page
+\begin{titlepage}
+\vspace{4cm}
+\linespread{1.5}\selectfont
+\begin{center}
+{\fontsize{18pt}{27pt}\selectfont 碩士論文}\\
+\vspace{1cm}
+{\fontsize{18pt}{27pt}\selectfont Title}\\
+{\fontsize{18pt}{27pt}\selectfont 標題}\\
+\vspace{1cm}
+{\fontsize{18pt}{27pt}\selectfont 姓名}\\
+{\fontsize{18pt}{27pt}\selectfont Name}\\
+\vspace{1cm}
+{\fontsize{18pt}{27pt}\selectfont 指導教授}\\
+{\fontsize{18pt}{27pt}\selectfont Advisor}\\
+\vspace{1cm}
+{\fontsize{18pt}{27pt}\selectfont 中華民國 114 年 8 月}\\
+{\fontsize{18pt}{27pt}\selectfont August, 2025}\\
+\end{center}
+\vspace{3cm}
+\end{titlepage}
 
 \frontmatter
+\input{inc/0_acknowledgements/acknowledgements.tex}
+\input{inc/0_abstract/abstract_chinese.tex}
 \input{inc/0_abstract/abstract.tex}
 \tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
 \listoffigures
 \listoftables
+
+
+\cleardoublepage
+\input{inc/0_abbreviations/abbreviations.tex}
 
 %------------------------------------
 % Thesis Body -- begin
@@ -59,11 +68,20 @@
 
 \input{inc/1_introduction/introduction.tex}
 \input{inc/2_related_work/related_work.tex}
-
-%------------------------------------
-% Thesis Body -- end
-%------------------------------------
+\input{inc/3_method/method.tex}
+\input{inc/4_result/result.tex}
+\input{inc/5_discussion/discussion.tex}
+\input{inc/6_conclusion/conclusion.tex}
+\nocite{*}
 
 \bibliographystyle{IEEEtran}
 \bibliography{thesis}
+
+
+%------------------------------------
+% Appendix -- begin
+%------------------------------------
+\appendix
+\input{inc/7_appendix/appendix.tex}
+
 \end{document}

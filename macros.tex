@@ -11,7 +11,17 @@
 %%%%%%\let\ifpdf\relax
 
 % For removing LaTeX Font Warning
-\usepackage{lmodern}
+%\usepackage{lmodern}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usepackage{xeCJK}
+\setCJKmainfont{標楷體}[BoldFont=標楷體, ItalicFont=標楷體] 
+\setCJKfamilyfont{kai}{標楷體}
+\newCJKfontfamily\CJKtt{標楷體}
+\setCJKmonofont{標楷體}
 
 % Add Reference in Contents
 \usepackage[nottoc]{tocbibind}
@@ -24,7 +34,7 @@
 \usepackage{makecell}
 \usepackage{sidecap}
 
-\graphicspath{{figures}{example}}
+
 
 % Algorithm
 \usepackage[lined,ruled,linesnumbered]{algorithm2e}
@@ -39,7 +49,8 @@
 %\specialrule{width}{abovespace}{belowspace}
 \newcommand{\dtoprule}{\specialrule{2pt}{0pt}{2pt}}
 \newcommand{\dbottomrule}{\specialrule{2pt}{0pt}{\belowrulesep}}
-
+\usepackage[acronym]{glossaries}
+\makeglossaries
 \usepackage{paralist}
 \usepackage{enumitem}
 
@@ -47,17 +58,38 @@
 \usepackage{bm} % Make bold, italic math symbols
 \usepackage{epsfig} % for figures
 \usepackage{graphicx} % another package that works for figures
-\usepackage{times}
+\graphicspath{{figures/}{example/}{image/}}
+
 %\usepackage{mathptmx}
 \usepackage{mathtools}
-\usepackage{textcomp, gensymb} % math symbol
+%\usepackage{textcomp, gensymb} % math symbol
+%\usepackage{gensymb}
+\newcommand{\perthousand}{\textperthousand}
+\newcommand{\micro}{\ensuremath{\mu}}
 \usepackage{amssymb,amsmath,amsfonts} % Short math guide for LaTeX ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf
 \usepackage{siunitx} % SI units
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\cp}[1]{\left[#1\right]_{\times}}
 
+% make the 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{} % clear all headers and footers
+\fancyfoot[C]{\thepage} % page number in center of footer
+\renewcommand{\headrulewidth}{0pt} % no header line
+\renewcommand{\footrulewidth}{0pt} % no footer line
+
+% Ensure chapter pages also have centered page number
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
 % Fonts
-\usepackage{units}
+%\usepackage{units}
 \usepackage{color}
 
 % Comments
@@ -74,10 +106,13 @@
 \usepackage{bookmark}
 %\usepackage[pagebackref=true,breaklinks=true,colorlinks,bookmarks=false]{hyperref} % remove letterpaper=true,
 %
-\usepackage{slashbox}
+%\usepackage{slashbox}
+\usepackage{diagbox}
 \usepackage{xspace}
 %\usepackage[table,caption=false]{xcolor}
-%\usepackage{setspace}
+\usepackage{setspace}
+\newenvironment{zhspace}{\begin{spacing}{1.5}}{\end{spacing}}
+\newenvironment{engspace}{\begin{spacing}{2.0}}{\end{spacing}}
 
 % Better hyphenation
 \usepackage{microtype}
@@ -85,6 +120,8 @@
 % Appendix
 \usepackage[toc,page]{appendix}
 
+% Citation
+\usepackage{cite}
 % =========================================
 % Useful macros
 % =========================================
@@ -170,3 +207,4 @@
 \newcommand{\atan}{\mathrm{atan}}
 \newcommand{\atanT}{\mathrm{atan2}}
 \newcommand{\dotP}{\mathrm{dot}}
+
