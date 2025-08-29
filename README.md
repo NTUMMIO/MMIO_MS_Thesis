@@ -141,6 +141,7 @@
 - 本模板**參考並修訂**自：`mediaic/NTU_MS_Thesis`。  
 - 使用與再散布請同時遵循本專案與上游專案之授權條款；若需授權細節，請查閱各專案的授權聲明。  
 - 感謝 MMIO 實驗室成員之建議與回饋。
+- 如要列印精裝版論文建議可以去[經典數位印刷](https://maps.app.goo.gl/7cockTZRSVbBneni9)，價格會較便宜，或是[宏信印刷](https://maps.app.goo.gl/T883FL2WCgYZGiQM9)，如有其他推薦影印店也歡迎加入讓後續學弟妹可以參考!
 
 ---
 
